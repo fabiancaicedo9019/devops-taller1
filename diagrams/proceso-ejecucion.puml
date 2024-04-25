@@ -1,0 +1,31 @@
+@startuml proceso-ejecucion
+start
+:Iniciar proceso de ejecución de scripts;
+
+:main.sh: Ejecución de dependencies.sh;
+note right
+  1. Chequea e instala Zsh si es necesario.
+  2. Instala Oh-My-Zsh para cada usuario.
+  3. Establece Zsh como shell por defecto.
+  4. Instala varios paquetes adicionales "tree", "net-tools", "nginx", "rsyslog", "libpam-pwquality".
+end note
+
+:main.sh: Ejecución de nginx-config.sh;
+note right
+  1. Configura seguridad básica en Nginx.
+  2. Configura el sitio web estático.
+  3. Ajusta permisos de archivos y carpetas.
+  4. Configura y reinicia UFW y Nginx.
+end note
+
+:main.sh: Ejecución de additional-hardening.sh;
+note right
+  1. Configura registro de eventos de seguridad.
+  2. Establece política de contraseñas seguras.
+  3. Deshabilita inicio de sesión root por SSH.
+  4. Crea un usuario con configuraciones personalizadas.
+end note
+
+:Finalizar proceso de ejecución de scripts;
+stop
+@enduml

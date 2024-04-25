@@ -1,0 +1,19 @@
+@startuml hardening
+start
+:Identificar servicios innecesarios;
+if (¿Hay servicios que eliminar?) then (sí)
+  :Eliminar servicios innecesarios;
+else (no)
+endif
+
+:Identificar usuarios no autorizados;
+if (¿Hay usuarios que eliminar?) then (sí)
+  :Eliminar usuarios no autorizados;
+else (no)
+endif
+
+:Configurar firewalls;
+:Establecer permisos restrictivos en archivos y carpetas;
+:Instalar alarmas y cámaras de seguridad;
+stop
+@enduml

@@ -1,0 +1,8 @@
+@startuml idempotencia
+[*] --> Esperando
+Esperando --> EntregandoLata : PresionarBoton
+EntregandoLata --> Esperando : LataEntregada
+EntregandoLata --> Ignorando : PresionarBoton
+Ignorando --> Ignorando : PresionarBoton
+Ignorando --> Esperando : LataEntregada
+@enduml
